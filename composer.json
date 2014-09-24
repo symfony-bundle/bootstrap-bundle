@@ -1,0 +1,23 @@
+{
+    "name": "symfony-bundle/bootstrap-bundle",
+    "type": "symfony-bundle",
+    "description": "Twitter Bootstrap Bundle for Symfony2",
+    "keywords": ["bootstrap"],
+    "homepage": "https://git.anezi.net/symfony/bootstrapbundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hassan AMOUHZI",
+            "email": "hassan@amouhzi.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.9",
+        "symfony-bundle/jquery-bundle": ">=1.9.0",
+        "twbs/bootstrap": "3.2.*"
+    },
+    "autoload": {
+        "psr-0": { "Anezi\\Bundle\\BootstrapBundle": "" }
+    },
+    "target-dir": "Anezi/Bundle/BootstrapBundle"
+}
