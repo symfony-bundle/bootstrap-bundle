@@ -1,0 +1,7 @@
+bootstrap_root:
+    path:     /
+    defaults: { _controller: BootstrapBundle:Default:index, slug: index }
+
+bootstrap_page:
+    path:     /{slug}
+    defaults: { _controller: BootstrapBundle:Default:index, slug: 1 }

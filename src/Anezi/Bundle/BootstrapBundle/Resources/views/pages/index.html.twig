@@ -1,0 +1,27 @@
+{% stylesheets 'bundles/bootstrap/docs/assets/flash/ZeroClipboard.swf'
+output='assets/flash/ZeroClipboard.swf'
+%}
+{% endstylesheets %}
+<main class="bs-docs-masthead" id="content" role="main">
+    <div class="container">
+        <span class="bs-docs-booticon bs-docs-booticon-lg bs-docs-booticon-outline"
+                style="width: 244px;">BBS</span>
+        <p class="lead">
+            {{ site.title }} (BBS) adds Twitter Bootstrap framework inside of Symfony project.
+        </p>
+        <p class="lead">
+            <a href="getting-started#download" class="btn btn-outline-inverse btn-lg">
+                Download {{ site.title }}
+            </a>
+        </p>
+        <p class="version">Currently v{{ site.current_version }}</p>
+        {# {% include ads.html %} #}
+    </div>
+</main>
+
+<div class="bs-docs-featurette">
+    <div class="container">
+        <p class="lead">{{ site.title }} is open source. It's hosted, developed, and maintained on GitHub.</p>
+        <a href="{{ site.repo }}" class="btn btn-outline btn-lg">View the GitHub project</a>
+    </div>
+</div>

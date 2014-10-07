@@ -157,6 +157,19 @@ Then you can use the pre defined extension in your template. Example:
         </div>
     {{ form_end(form) }}
 
+
+Pygments (Highlight code) (Optional)
+--------
+### Installation
+
+    sudo apt-get install python-pygments
+
+TO DO.
+
+### Usage
+
+TO DO.
+
 License
 -------
 

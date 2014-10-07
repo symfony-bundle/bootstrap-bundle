@@ -8,10 +8,19 @@
  
 namespace Anezi\Bundle\BootstrapBundle\Twig;
 
+use Anezi\Bundle\BootstrapBundle\Twig\TokenParser\CommentTokenParser;
+use Anezi\Bundle\BootstrapBundle\Twig\TokenParser\HighlightTokenParser;
 use Symfony\Component\Form\FormView;
 
 class BootstrapExtension extends \Twig_Extension
 {
+
+    function getTokenParsers() {
+        return array(
+            new CommentTokenParser(),
+            new HighlightTokenParser(),
+        );
+    }
 
     public function getName()
     {

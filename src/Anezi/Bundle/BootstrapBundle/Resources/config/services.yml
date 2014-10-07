@@ -1,0 +1,6 @@
+services:
+    acme.twig.acme_extension:
+        class: Anezi\Bundle\BootstrapBundle\Twig\BootstrapExtension
+        tags:
+            - { name: twig.extension }
+

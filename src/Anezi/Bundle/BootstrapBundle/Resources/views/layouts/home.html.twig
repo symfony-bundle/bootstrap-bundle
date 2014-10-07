@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    {% include 'BootstrapBundle:includes:header.html.twig' %}
+</head>
+<body class="bs-docs-home">
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+<!-- Docs master nav -->
+{% include 'BootstrapBundle:includes/nav:main.html.twig' %}
+
+<!-- Page content of course! -->
+{% include 'BootstrapBundle:pages:' ~ slug ~ '.html.twig' %}
+{#
+{{ content|raw }}
+#}
+
+{% include 'BootstrapBundle:includes:footer.html.twig' %}
+</body>
+</html>

@@ -18,25 +18,22 @@ class ScriptHandler
 
         $IO->write("Copying twitter bootstrap files ... ", FALSE);
 
-        $vendor = 'vendor';
-        $jquery = $vendor . '/components/jquery';
-        $bundle = $vendor . '/symfony-bundle/bootstrap-bundle';
-        
-        if(!file_exists($bundle . '/Anezi/Bundle/BootstrapBundle/Resources')) {
-            mkdir($bundle . '/Anezi/Bundle/BootstrapBundle/Resources');
-        }
-        
-        if(!file_exists($bundle . '/Anezi/Bundle/BootstrapBundle/Resources/public')) {
-            mkdir($bundle . '/Anezi/Bundle/BootstrapBundle/Resources/public');
-        }
+        $bundle = dirname(__DIR__);
 
-        if(file_exists($bundle . '/Anezi/Bundle/BootstrapBundle/Resources/public')) {
-            self::delTree($bundle . '/Anezi/Bundle/BootstrapBundle/Resources/public');
+        if(file_exists($bundle . '/Resources/public')) {
+            self::delTree($bundle . '/Resources/public');
         }
 
         self::recurse_copy(
-            $vendor . '/twbs/bootstrap/dist',
-            $bundle . '/Anezi/Bundle/BootstrapBundle/Resources/public'
+            'vendor/twbs/bootstrap/dist',
+            $bundle . '/Resources/public'
+        );
+
+        mkdir($bundle . '/Resources/public/docs');
+
+        self::recurse_copy(
+            'vendor/twbs/bootstrap/docs/assets',
+            $bundle . '/Resources/public/docs/assets'
         );
 
         $IO->write(" <info>OK</info>");

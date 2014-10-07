@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+{% include 'BootstrapBundle:includes:header.html.twig' %}
+</head>
+<body>
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+<!-- Docs master nav -->
+{% include 'BootstrapBundle:includes:nav/main.html.twig' %}
+
+<!-- Docs page layout -->
+<div class="bs-docs-header" id="content">
+    <div class="container">
+        <h1>{{ page.title }}</h1>
+        {#
+        <p>{{ page.lead }}</p>
+        {% include ads.html %}
+        #}
+    </div>
+</div>
+
+<div class="container bs-docs-container">
+
+    <div class="row">
+        <div class="col-md-9" role="main">
+            {% include 'BootstrapBundle:pages:' ~ slug ~ '.html.twig' %}
+        </div>
+        <div class="col-md-3">
+            <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" role="complementary">
+                <ul class="nav bs-docs-sidenav">
+                    {% if page.slug == "getting-started" %}
+                        {% include 'BootstrapBundle:includes:nav/getting-started.html.twig' %}
+                    {% elseif page.slug == "css" %}
+                        {% include 'BootstrapBundle:includes:nav/css.html.twig' %}
+                    {% elseif page.slug == "components" %}
+                        {% include 'BootstrapBundle:includes:nav/components.html.twig' %}
+                    {% elseif page.slug == "js" %}
+                        {% include 'BootstrapBundle:includes:nav/javascript.html.twig' %}
+                    {% elseif page.slug == "customize" %}
+                        {% include 'BootstrapBundle:includes:nav/customize.html.twig' %}
+                    {% elseif page.slug == "about" %}
+                        {% include 'BootstrapBundle:includes:nav/about.html.twig' %}
+                    {% elseif page.slug == "migration" %}
+                        {% include 'BootstrapBundle:includes:nav/migration.html.twig' %}
+                    {% endif %}
+                </ul>
+                <a class="back-to-top" href="#top">
+                    Back to top
+                </a>
+                {% if page.slug == "css" or page.slug == "components" or page.slug == "js" %}
+                    <a href="#" class="bs-docs-theme-toggle">
+                        Preview theme
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'BootstrapBundle:includes:footer.html.twig' %}
+</body>
+</html>
