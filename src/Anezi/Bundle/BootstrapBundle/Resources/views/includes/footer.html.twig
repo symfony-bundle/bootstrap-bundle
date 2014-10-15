@@ -24,24 +24,16 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="{{ asset('bundles/jquery/js/jquery.min.js') }}"></script>
-{% if site.github %}
-    <script src="{{ asset('bundles/bootstrap/js/bootstrap.min.js') }}"></script>
-{% else %}
-    <script src="{{ asset('bundles/bootstrap/js/bootstrap.js') }}"></script>
-{% endif %}
-{% if site.github %}
-    <script src="{{ asset('bundles/bootstrap/docs/assets/js/docs.min.js') }}"></script>
-{% else %}
-    <script src="{{ asset('bundles/bootstrap/docs/assets/js/_vendor/holder.js') }}"></script>
-    <script src="{{ asset('bundles/bootstrap/docs/assets/js/_vendor/ZeroClipboard.min.js') }}"></script>
-    <script src="{{ asset('bundles/bootstrap/docs/assets/js/_src/application.js') }}"></script>
-{% endif %}
+<script src="{{ asset('bundles/jquery/js/jquery.js') }}"></script>
+<script src="{{ asset('bundles/bootstrap-extra/js/bootstrap.js') }}"></script>
+<script src="{{ asset('bundles/bootstrap/js/holder.js') }}"></script>
+<script src="{{ asset('bundles/bootstrap/docs/assets/js/_vendor/ZeroClipboard.min.js') }}"></script>
+<script src="{{ asset('bundles/bootstrap/js/application.js') }}"></script>
 {% if page.slug == "customize" %}
     <script src="{{ asset('bundles/bootstrap/docs/assets/js/customize.min.js') }}"></script>
 {% endif %}
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="{{ asset('bundles/bootstrap/docs/assets/js/ie10-viewport-bug-workaround.js') }}"></script>
+<script src="{{ asset('bundles/bootstrap/js/ie10-viewport-bug-workaround.js') }}"></script>
 
 {#
 Inject Twitter widgets asynchronously. Snippet snipped from Twitter's

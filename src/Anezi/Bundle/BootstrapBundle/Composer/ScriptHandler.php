@@ -8,68 +8,30 @@
  
 namespace Anezi\Bundle\BootstrapBundle\Composer;
 
-use Composer\Script\Event;
+use Composer\Script\CommandEvent;
+use Sensio\Bundle\DistributionBundle\Composer\ScriptHandler as SensioScriptHandler;
 
-class ScriptHandler
+class ScriptHandler extends SensioScriptHandler
 {
-    public static function copyFilesToBundle(Event $event)
+    public static function installExtraAssets(CommandEvent $event)
     {
-        $IO = $event->getIO();
+        $options = self::getOptions($event);
+        $consoleDir = self::getConsoleDir($event, 'install assets');
 
-        $IO->write("Copying twitter bootstrap files ... ", FALSE);
-
-        $bundle = dirname(__DIR__);
-
-        if(file_exists($bundle . '/Resources/public')) {
-            self::delTree($bundle . '/Resources/public');
+        if (null === $consoleDir) {
+            return;
         }
 
-        self::recurse_copy(
-            'vendor/twbs/bootstrap/dist',
-            $bundle . '/Resources/public'
+        $webDir = $options['symfony-web-dir'];
+
+        if (!self::hasDirectory($event, 'symfony-web-dir', $webDir, 'install assets')) {
+            return;
+        }
+
+        static::executeCommand(
+            $event,
+            $consoleDir,
+            'bootstrap:extra-assets:install ' . escapeshellarg($webDir)
         );
-
-        mkdir($bundle . '/Resources/public/docs');
-
-        self::recurse_copy(
-            'vendor/twbs/bootstrap/docs/assets',
-            $bundle . '/Resources/public/docs/assets'
-        );
-
-        $IO->write(" <info>OK</info>");
-    }
-
-    /**
-     * @param $dir
-     * @return bool
-     * @see http://php.net/manual/fr/function.rmdir.php#110489
-     */
-    public static function delTree($dir) {
-        $files = array_diff(scandir($dir), array('.','..'));
-        foreach ($files as $file) {
-            (is_dir("$dir/$file")) ? self::delTree("$dir/$file") : unlink("$dir/$file");
-        }
-        return rmdir($dir);
-    }
-
-    /**
-     * @param $src
-     * @param $dst
-     * @see http://php.net/manual/fr/function.copy.php#91010
-     */
-    public static function recurse_copy($src,$dst) {
-        $dir = opendir($src);
-        mkdir($dst);
-        while(false !== ( $file = readdir($dir)) ) {
-            if (( $file != '.' ) && ( $file != '..' )) {
-                if ( is_dir($src . '/' . $file) ) {
-                    self::recurse_copy($src . '/' . $file,$dst . '/' . $file);
-                }
-                else {
-                    copy($src . '/' . $file,$dst . '/' . $file);
-                }
-            }
-        }
-        closedir($dir);
     }
 }

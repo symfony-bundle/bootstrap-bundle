@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Yaml\Yaml;
 
-class DefaultController extends Controller
+class DocsController extends Controller
 {
     public function indexAction(Request $request, $slug)
     {

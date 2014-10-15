@@ -14,31 +14,22 @@
 </title>
 
 <!-- Bootstrap core CSS -->
-{% if site.github %}
-    <link href="{{ asset('bundles/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-{% else %}
-    <link href="{{ asset('bundles/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
-{% endif %}
+<link href="{{ asset('bundles/bootstrap-extra/css/bootstrap.css') }}" rel="stylesheet">
 {% if page.slug == "css" or page.slug == "components" or page.slug == "js" %}
     <!-- Optional Bootstrap Theme -->
-    {% if site.github %}
-        <link href="data:text/css;charset=utf-8," data-href="{{ asset('bundles/bootstrap/css/bootstrap-theme.min.css') }}" rel="stylesheet" id="bs-theme-stylesheet">
-    {% else %}
-        <link href="data:text/css;charset=utf-8," data-href="{{ asset('bundles/bootstrap/css/bootstrap-theme.css') }}" rel="stylesheet" id="bs-theme-stylesheet">
-    {% endif %}
+    <link href="data:text/css;charset=utf-8,"
+          data-href="{{ asset('bundles/bootstrap-extra/css/bootstrap-theme.css') }}"
+          rel="stylesheet" id="bs-theme-stylesheet">
 {% endif %}
 
 <!-- Documentation extras -->
-{% if site.github %}
-    <link href="{{ asset('bundles/bootstrap/docs/assets/css/docs.min.css') }}" rel="stylesheet">
-{% else %}
-    <link href="{{ asset('bundles/bootstrap/docs/assets/css/_src/docs.css') }}" rel="stylesheet">
-    <link href="{{ asset('bundles/bootstrap/docs/assets/css/_src/pygments-manni.css') }}" rel="stylesheet">
-{% endif %}
+<link href="{{ asset('bundles/bootstrap/css/docs.css') }}" rel="stylesheet">
+<link href="{{ asset('bundles/highlight-extra/css/manni.css') }}"
+      rel="stylesheet">
 <!--[if lt IE 9]>
-<script src="{{ asset('bundles/bootstrap/docs/assets/js/ie8-responsive-file-warning.js') }}"></script>
+<script src="{{ asset('bundles/bootstrap/js/ie8-responsive-file-warning.js') }}"></script>
 <![endif]-->
-<script src="{{ asset('bundles/bootstrap/docs/assets/js/ie-emulation-modes-warning.js') }}"></script>
+<script src="{{ asset('bundles/bootstrap/js/ie-emulation-modes-warning.js') }}"></script>
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>

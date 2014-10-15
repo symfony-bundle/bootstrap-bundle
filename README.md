@@ -67,8 +67,8 @@ Usage
 Refer to the jquery and bootstrap files in your HTML template, e.g.:
 
     <script type="text/javascript" src="{{ asset('bundles/jquery/js/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('bundles/bootstrap/j/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('bundles/bootstrap/css/bootstrap.min.css') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/bootstrap/js/bootstrap.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/bootstrap/css/bootstrap.css') }}">
 
 ### Horizontal form:
 

@@ -17,6 +17,7 @@ class BootstrapAppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Anezi\Bundle\JQueryBundle\JQueryBundle(),
+            new Anezi\Bundle\HighlightBundle\HighlightBundle(),
             new Anezi\Bundle\BootstrapBundle\BootstrapBundle(),
         );
 

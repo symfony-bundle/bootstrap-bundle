@@ -29,7 +29,8 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "sensio/generator-bundle": "~2.3",
         "composer/composer": "1.0.x-dev",
-        "phpunit/phpunit": "4.3.*"
+        "phpunit/phpunit": "4.3.*",
+        "symfony-bundle/highlight-bundle": "1.0.*"
     },
     "scripts": {
         "post-root-package-install": [
@@ -40,20 +41,22 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Anezi\\Bundle\\JQueryBundle\\Composer\\ScriptHandler::copyJQueryToBundle",
-            "Anezi\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::copyFilesToBundle",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
+            "Anezi\\Bundle\\HighlightBundle\\Composer\\ScriptHandler::installExtraAssets",
+            "Anezi\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::installExtraAssets"
         ],
         "post-update-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Anezi\\Bundle\\JQueryBundle\\Composer\\ScriptHandler::copyJQueryToBundle",
-            "Anezi\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::copyFilesToBundle",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
+            "Anezi\\Bundle\\HighlightBundle\\Composer\\ScriptHandler::installExtraAssets",
+            "Anezi\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::installExtraAssets"
         ]
     },
     "autoload": {
