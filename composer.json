@@ -3,7 +3,6 @@
     "type": "symfony-bundle",
     "description": "Twitter Bootstrap Bundle for Symfony2",
     "keywords": ["bootstrap"],
-    "homepage": "https://git.anezi.net/symfony/bootstrapbundle",
     "license": "MIT",
     "authors": [
         {
